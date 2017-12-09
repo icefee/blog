@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<style type="text/css">
+		* { padding: 0; margin: 0; }
+		body { background: #000; }
+		.box { width: 800px; height: 400px; margin: 100px auto; }
+		.st0 { font-size: 50px; fill: none; stroke: #03a9f4; stroke-miterlimit: 10; stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: ani infinite 20s ease 1s; }
+		@keyframes ani {
+			0% { stroke-dashoffset: 1000; }
+			80% { fill: #fff; }
+			100% { stroke-dashoffset: 0; fill: #03a9f4; }
+		}
+		@media screen and (max-width: 600px) {
+			.box { width: 100%; }
+		}
+	</style>
+</head>
+<body>
+<div class="box" id="view">
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="100%" y="100%" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+	<text transform="matrix(1 0 0 1 60 60)" class="st0">你</text>
+	<text transform="matrix(1 0 0 1 120 60)" class="st0" style="animation-delay: 3s">好</text>
+	<text transform="matrix(1 0 0 1 180 60)" class="st0" style="animation-delay: 6s">吗</text>
+	<text transform="matrix(1 0 0 1 20 120)" class="st0" style="animation-delay: 9s">无</text>
+	<text transform="matrix(1 0 0 1 80 120)" class="st0" style="animation-delay: 12s">锡</text>
+	<text transform="matrix(1 0 0 1 20 180)" class="st0" style="animation-delay: 15s">的</text>
+	<text transform="matrix(1 0 0 1 80 180)" class="st0" style="animation-delay: 18s">小</text>
+	<text transform="matrix(1 0 0 1 20 240)" class="st0" style="animation-delay: 21s">伙</text>
+	<text transform="matrix(1 0 0 1 80 240)" class="st0" style="animation-delay: 24s">伴</text>
+	</svg>
+</div>
+<script type="text/javascript">
+	var _view = document.querySelector('#view')
+	var state = false
+	// roll()
+
+	function roll() {
+		_view.className = state ? 'box active' : 'box'
+		state = !state
+		setTimeout(roll, 8000)
+	}
+</script>
+</body>
+</html>
