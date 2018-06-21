@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>加载中...</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .view {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+            height: 100vh;
+            background: url('./assets/cates_bg.jpg') no-repeat center;
+            background-size: 100% 100%;
+        }
+        .view .type {
+          position: absolute;
+          width: 3.7rem;
+          height: 1.5rem;
+          bottom: 2.2rem;
+          right: .9rem;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100% auto;
+        }
+        .view .type_0 {
+          background-image: url('./assets/type_0.png');
+        }
+        .view .type_1 {
+          background-image: url('./assets/type_1.png');
+        }
+        .view .type_2 {
+          background-image: url('./assets/type_2.png');
+        }
+        .name {
+          padding: .5rem 0 .2rem;
+          font-size: .7rem;
+          text-align: center;
+        }
+        .frame {
+          padding: .5rem .7rem .6rem .5rem;
+          width: 10rem;
+          height: 7rem;
+          background: url('./assets/border.png') no-repeat center;
+          background-size: 100% auto;
+        }
+        .frame img {
+          height: 100%;
+        }
+        .introduce {
+          font-size: .4rem;
+          padding: .6rem .8rem;
+          text-indent: .8rem;
+        }
+    </style>
+    <link rel="stylesheet" href="./assets/swiper-4.3.3.min.css">
+    <script type="text/javascript" src="./assets/template7.min.js"></script>
+    <script type="text/javascript">
+        ;(function (global) {
+            var width = Math.min(global.screen.availWidth, 500);
+            var html = document.querySelector('html');
+            html.style.fontSize = (width / 10) + 'px';
+        }(window))
+        ;global = {};
+        ;(function (global) {
+          global.data = [
+            [
+              {
+                name: '蜻蜓',
+                picture: './assets/res/0_0.jpg',
+                description: '蜻蜓，（学名：Dragonfly）无脊椎动物，昆虫纲，蜻蜓目，差翅亚目昆虫的通称。一般体型较惖大，翅长而窄，膜质，网状翅脉极为清晰。视觉极为灵敏，单眼3个；触角1对，细而较短；咀嚼式口器。蜻蜓是世界上眼睛最多的昆虫。'
+              },
+              {
+                name: '艾鼬',
+                picture: './assets/res/0_1.jpg',
+                description: '艾鼬（学名：  Mustela eversmanni）又称作艾虎、地狗，是鼬科鼬属的小型毛皮动物，体形象黄鼬，身长30-45cm，尾长11-20cm。吻部钝，颈稍粗，足短。前肢间毛短，背中部毛最长，略为拱曲形。尾毛稍蓬松。体侧淡棕色。'
+              },
+              {
+                name: '白腹鹞',
+                picture: './assets/res/0_2.jpg',
+                description: '白腹鹞（学名：Circus spilonotus）中型猛禽，体长50~60厘米。雄鸟头顶至上背白色，具宽阔的黑褐色纵纹。上体黑褐色，具污灰白色斑点，外侧覆羽和飞羽银灰色，下体近白色，微缀皮黄色，幼鸟暗褐色，头顶和喉皮黄白色。'
+              },
+              {
+                name: '白腰草鹬',
+                picture: './assets/res/0_3.jpg',
+                description: '白腰草鹬（学名:Tringa ochropus）为小型涉禽，体长20-24厘米，是一种黑白两色的内陆水边鸟类。夏季上体黑褐色具白色斑点。腰和尾白色，尾具黑色横斑。下体白色，胸具黑褐色纵纹。冬季颜色较灰，胸部纵纹不明显。'
+              },
+              {
+                name: '白枕鹤',
+                picture: './assets/res/0_4.jpg',
+                description: '白枕鹤（学名：Grus vipio）体形与丹顶鹤相似，略小于丹顶鹤，而大于白头鹤。上体为石板灰色。尾羽为暗灰色，末端具有宽阔的黑色横斑。取食时主要用喙啄食，或用喙先拨开表层土壤，然后啄食埋藏在下面的种子和根茎，边走边啄食。'
+              },
+              {
+                name: '斑嘴鸭',
+                picture: './assets/res/0_5.jpg',
+                description: '斑嘴鸭（学名：Anas poecilorhyncha）属大型鸭类，体型大小和绿头鸭相似，体长50-64厘米，体重1千克左右。雌雄羽色相似。上嘴黑色，先端黄色，脚橙黄色，脸至上颈侧、眼先、眉纹、颏和喉均为淡黄白色，远处看起来呈白色，与深的体色呈明显反差。'
+              },
+              {
+                name: '苍鹭',
+                picture: './assets/res/0_6.jpg',
+                description: '苍鹭（学名：Ardea cinerea）又称灰鹭，为鹭科鹭属的一种涉禽，也是鹭属的模式种。是欧亚大陆与非洲大陆的湿地中极为常见的水鸟。大型水边鸟类，头、颈、脚和嘴均甚长，因而身体显得细瘦。'
+              },
+              {
+                name: '池鹭',
+                picture: './assets/res/0_7.jpg',
+                description: '池鹭（学名：Ardeola bacchus）系典型涉禽类，体长约47厘米，翼白色、身体具褐色纵纹的鹭。繁殖羽：头及颈深栗色，胸紫酱色。冬季：站立时具褐色纵纹，飞行时体白而背部深褐。虹膜褐色；嘴黄色；腿及脚绿灰色。'
+              },
+              {
+                name: '赤麻鸭',
+                picture: './assets/res/0_8.jpg',
+                description: '赤麻鸭（学名：Tadorna ferruginea）体型较大，体长51-68厘米，体重约1.5kg，比家鸭稍大。全身赤黄褐色，翅上有明显的白色翅斑和铜绿色翼镜；嘴、脚、尾黑色；雄鸟有一黑色颈环。'
+              },
+              {
+                name: '大鸨',
+                picture: './assets/res/0_9.jpg',
+                description: '大鸨（学名：Otis tarda）是鹤形目鸨科的大型地栖鸟类。翅长超过400毫米。嘴短，头长、基部宽大于高。翅大而圆，第3枚初级飞羽最长。无冠羽或皱领，雄鸟在喉部两侧有刚毛状的须状羽，其上身有少量的羽瓣。跗蹠等于翅长的1/4。'
+              },
+              {
+                name: '大天鹅',
+                picture: './assets/res/0_10.jpg',
+                description: '大天鹅（学名：Cygnus cygnus）是一种候鸟，没有亚种分化，体型高大，体长120-160cm，翼展218-243cm，体重8-12kg，寿命20-25年。嘴黑，嘴基有大片黄色，黄色延至上喙侧缘成尖。游水时颈较疣鼻天鹅为直。 栖息于开阔的、水生植物繁茂的浅水水域。'
+              },
+              {
+                name: '骨顶鸡',
+                picture: './assets/res/0_11.jpg',
+                description: '白骨顶鸡(学名:Fulica atra)属鹤形目秧鸡科的鸟类。嘴长度适中，高而侧扁。头具额甲，白色，端部钝圆。翅短圆，第1枚初级飞羽较第2枚为短。跗跖短，短于中趾不连爪，趾均具宽而分离的瓣蹼。体羽全黑或暗灰黑色，多数尾下覆羽有白色，两性相似。'
+              },
+              {
+                name: '黑颈长脚鹬',
+                picture: './assets/res/0_12.jpg',
+                description: '黑颈长脚鹬（学名：Himantopus mexicanus）是一种修长的黑白色涉禽。体长约37厘米。特征为细长的嘴黑色，两翼黑，长长的腿红色，体羽白。颈背具黑色斑块。幼鸟褐色较浓，头顶及颈背沾灰。'
+              },
+              {
+                name: '黑鹳',
+                picture: './assets/res/0_13.jpg',
+                description: '黑鹳（学名：Ciconia nigra）是一种体态优美，体色鲜明，活动敏捷，性情机警的大型涉禽。成鸟的体长为1-1.2米，体重2-3千克；嘴长而粗壮，头、颈、脚均甚长，嘴和脚红色。身上的羽毛除胸腹部为纯白色外，其余都是黑色。'
+              },
+              {
+                name: '黑琴鸡',
+                picture: './assets/res/0_14.jpg',
+                description: '黑琴鸡（学名：Tetrao tetrix）：属于中型鸡类，是走禽。体结实，喙短，呈圆锥形，适于啄食植物种子；翼短圆，不善飞；脚强健，具锐爪，善于行走和掘地寻食；鼻孔和脚均有被羽，以以适应严寒。'
+              },
+              {
+                name: '黑尾塍鹬',
+                picture: './assets/res/0_15.jpg',
+                description: '黑尾塍鹬（学名：Limosa limosa）：中型涉禽，体长36-44厘米。嘴、脚、颈皆较长，是一种细高而鲜艳的鸟类。嘴长而直微向上翘，尖端较钝、黑色，基部肉色。'
+              },
+              {
+                name: '红脚隼',
+                picture: './assets/res/0_16.jpg',
+                description: '红脚隼（学名：Falco vespertinus)为脊索动物门，鸟纲，隼形目，隼科、隼属动物，又叫青燕子、青鹰、红腿鹞子、蚂蚱鹰等，是小型猛禽。是国家二级重点保护动物。'
+              },
+              {
+                name: '环颈雉',
+                picture: './assets/res/0_17.jpg',
+                description: '雉鸡（学名：Phasianus colchicus）：共有31个亚种。体形较家鸡略小，但尾巴却长得多。雄鸟羽色华丽，颈部都有白色颈圈，与金属绿色的颈部，形成显著的对比；尾羽长而有横斑。雌鸟的羽色暗淡，大都为褐和棕黄色，而杂以黑斑；尾羽也较短。'
+              },
+              {
+                name: '黄鹡鸰',
+                picture: './assets/res/0_18.jpg',
+                description: '黄鹡鸰（学名：Motacilla flava） 体型大小和山鹡鸰差不多，体长15~18厘米。头顶蓝灰色或暗色。上体橄榄绿色或灰色、具白色、黄色或黄白色眉纹。飞羽黑褐色具两道白色或黄白色横斑。尾黑褐色，最外侧两对尾羽大都白色。下体黄色。'
+              },
+              {
+                name: '普通鸬鹚',
+                picture: './assets/res/0_19.jpg',
+                description: '普通鸬鹚（学名：Phalacrocorax carbo）是大型水鸟。体长72-87厘米，体重大于2千克。通体黑色，头颈具紫绿色光泽，两肩和翅具青铜色光彩，嘴角和喉囊黄绿色，眼后下方白色，繁殖期间脸部有红色斑，头颈有白色丝状羽，下胁具白斑。'
+              },
+              {
+                name: '鹊鸭',
+                picture: './assets/res/0_20.jpg',
+                description: '鹊鸭（学名：Bucephala clangula）中型鸭类，体长32-69厘米，体重0.5-1千克。嘴短粗，颈亦短，尾较尖。雄鸭头黑色，两颊近嘴基处有大型白色圆斑。雌鸟略小，嘴黑色，先端橙色，头和颈褐色，眼淡黄色，颈基有白色颈环。'
+              },
+              {
+                name: '喜鹊',
+                picture: './assets/res/0_21.jpg',
+                description: '喜鹊（学名：Pica pica）是鸟纲鸦科的一种鸟类。体长40~50厘米，雌雄羽色相似，头、颈、背至尾均为黑色，并自前往后分别呈现紫色、绿蓝色、绿色等光泽，双翅黑色而在翼肩有一大形白斑，尾远较翅长，呈楔形，嘴、腿、脚纯黑色，腹面以胸为界，前黑后白。'
+              },
+              {
+                name: '小',
+                picture: './assets/res/0_22.jpg',
+                description: '小（Trachybaptus ruficollis；little gre-be） 目科小属的1种。全长25—32厘米。又名水葫芦，因体形短圆，在水上浮沉宛如葫芦而得名。上体黑褐而有光泽；眼先、颊、颏和上喉等均黑褐色；下喉、耳区和颈棕栗色；上胸黑褐色；下胸和腹部银白色；尾短。'
+              },
+              {
+                name: '鸳鸯雌鸟',
+                picture: './assets/res/0_23.jpg',
+                description: '鸳鸯（学名：Aix galericulata；英文名：Mandarin Duck，即中国官鸭）鸳指雄鸟，鸯指雌鸟，故鸳鸯属合成词。属雁形目的中型鸭类，体长38-45厘米，体重0.5千克左右。雌鸟嘴黑色，脚橙黄色，头和整个上体灰褐色，眼周白色，其后连一细的白色眉纹，亦极为醒目和独特。'
+              },
+              {
+                name: '风惊鸟',
+                picture: './assets/res/0_24.jpg',
+                description: '灰惊鸟，别名杜丽雀、高梁头、假画眉、竹雀、管连子。属雀形目，椋鸟科。繁殖在我国东北、内蒙古、华北、青海及山东一带;越冬于长江以南广大地区。'
+              }
+            ],
+            [
+              {
+                name: '鲫鱼',
+                picture: './assets/res/1_0.jpg',
+                description: '鲫鱼(学名:Carassius auratus，简称鲫，俗名鲫瓜子、月鲫仔、土鲫、喜头、鲋鱼、寒鲋)在欧亚地区为常见淡水鱼，为辐鳍鱼纲鲤形目鲤科鲫属的其中一种鱼类。'
+              },
+              {
+                name: '棒花鱼',
+                picture: './assets/res/1_1.jpg',
+                description: '棒花鱼，学名：Abbottina rivularis（Basi1ewsky）体粗壮。鼻孔前方下陷。唇厚，上唇的褶皱不显著;下唇侧叶光滑。侧线鳞35~39。生殖时期雄鱼胸鳍及头部均有珠星;各鳍延长。'
+              },
+              {
+                name: '麦穗鱼',
+                picture: './assets/res/1_2.jpg',
+                description: '麦穗鱼，学名：Pseudorasbora parva (Temminck et Schlegel, 1846)，是鲤亚目，鲤科，鮈亚科，麦穗鱼属的一种鱼类。'
+              },
+              {
+                name: '北方花鳅',
+                picture: './assets/res/1_3.jpg',
+                description: '北方花鳅是一种主要特征与黑龙江花鳅相似的小型鱼类。'
+              },
+              {
+                name: '泥鳅',
+                picture: './assets/res/1_4.jpg',
+                description: '泥鳅(学名:Misgurnus anguillicaudatus )，属鳅科泥鳅属。形体小，细长，只有3~4寸。且它体形圆，身短，皮下有小鳞片，颜色青黑，浑身沾满了自身的粘液，因而滑腻无法握住。前段略呈圆筒形。后部侧扁，腹部圆，头小、口小、下位，马蹄形。眼小，无眼下刺。须5对。'
+              },
+              {
+                name: '鲇鱼',
+                picture: './assets/res/1_5.jpg',
+                description: '鲇鱼即鲶鱼(学名：Silurus asotus)，属于脊椎动物亚门、硬骨鱼纲、辐鳍亚纲、鲇形目的一种鱼类，又称作胡子鲢、黏鱼、塘虱鱼，生仔鱼。'
+              },
+              {
+                name: '细鳞鱼',
+                picture: './assets/res/1_6.jpg',
+                description: '为冰期自北方南移的残留种。属冷水性山麓鱼类。'
+              }
+            ],
+            [
+              {
+                name: '地榆',
+                picture: './assets/res/2_0.jpg',
+                description: '地榆(拉丁学名:Sanguisorba officinalis L.)是蔷薇科地榆属多年生草本植物，纺锤形粗壮跟，短柄小叶，紫红色花瓣，果实包藏萼筒内。别名"黄爪香"、"玉札"、"玉豉"或"酸赭"等。'
+              },
+              {
+                name: '甘肃山楂',
+                picture: './assets/res/2_1.jpg',
+                description: '甘肃山楂（学名：Crataegus kansuensis Wils）是蔷薇科，山楂属小乔木。高可达6米；枝刺细，小枝粗壮，圆柱形，叶片宽卵形，叶柄无毛，多花，总花梗和花梗均无毛，花瓣宽倒卵形，白色；果实球形，红色。5-6月开花，7-8月结果。'
+              },
+              {
+                name: '河柳',
+                picture: './assets/res/2_2.jpg',
+                description: '河柳即旱柳。旱柳（Salix matsudana Koidz）落叶乔木，高达18米，胸径达80厘米，为杨柳科、柳属乔木。大枝斜上，树冠广圆形，树皮暗灰黑色，纵裂，枝直立或斜展，褐黄绿色，后变褐色，无毛，幼枝有毛，芽褐色，微有毛。'
+              },
+              {
+                name: '华北蓝盆花',
+                picture: './assets/res/2_3.jpg',
+                description: '华北蓝盆花(Scabiosa tschiliensis)，川续断科蓝盆花属多年生草本植物。植株高30-60厘米，茎自基部分枝，基生叶簇生，两面疏生白色柔毛;茎生叶对生，羽状深裂至全裂;近上部叶羽状全裂。花时扁球形;边花花冠二唇形，蓝紫色，瘦果椭圆形，果脱落时花托成长圆棒状。'
+              },
+              {
+                name: '金莲花',
+                picture: './assets/res/2_4.jpg',
+                description: '金莲花，别名：旱荷、旱莲花寒荷、陆地莲、旱地莲、金梅草、金疙瘩。学名：Trollius chinensis Bunge是毛茛科金莲花属的植物。一年生或多年生草本。株高30－100厘米。茎柔软攀附。叶圆形似荷叶，花形近似喇叭，萼筒细长，常见黄、橙、红色。'
+              },
+              {
+                name: '狼毒',
+                picture: './assets/res/2_5.jpg',
+                description: '狼毒(学名:Stellera chamaejasme Linn. )是瑞香科、狼毒属多年生草本植物。高可达40厘米。根圆柱形。茎丛生，平滑无毛，下部几木质，带褐色或谈红色。单叶互生，较密;狭卵形至线形，两面无毛;叶柄极短。头状花序顶生，花多数;萼常呈花冠状，白色或黄色带紫红色。'
+              },
+              {
+                name: '梅花草',
+                picture: './assets/res/2_6.jpg',
+                description: '梅花草(学名:Parnassia palustris L. )为虎耳草科多年生草本植物，高达50厘米。分布于东北、华北及陕西甘肃、青海等生于山坡、林边、山沟、隰草地。全草可入药，有清热解毒，止咳化痰的功效。'
+              },
+              {
+                name: '瞿麦',
+                picture: './assets/res/2_7.jpg',
+                description: '瞿麦，别名高山瞿麦，（拉丁文名：Dianthus superbus L.） 石竹科、石竹属多年生草本，高50-60厘米，有时更高。茎丛生，直立，绿色，无毛，上部分枝。叶片线状披针形，顶端锐尖，瓣片宽倒卵形，通常淡红色或带紫色，种子扁卵圆形，长约2毫米，黑色，有光泽。'
+              },
+              {
+                name: '拳参',
+                picture: './assets/res/2_8.jpg',
+                description: '拳参，又名:拳蓼，拉丁学名:Polygonum bistorta L. 属蓼目，蓼科多年生草本，高50~90厘米。根茎肥厚扭曲，外皮紫红色。茎直立，单一或数茎丛生，不分枝。根生叶丛生，有长柄;叶片椭圆形至卵状披针形，长12~18厘米，宽2.5~6厘米，先端短尖或钝，基部心形或圆形。'
+              },
+              {
+                name: '犬问荆',
+                picture: './assets/res/2_9.jpg',
+                description: '犬问荆（学名：Equisetum palustre L.）多年生草本，高15–30厘米，根状茎黑褐色。地上茎分枝轮生，稀单一，中心孔小型，有6–10条棱脊，表面有横的波状突起。叶鞘漏斗状，主枝的鞘齿三角状披针形，顶端黑褐色，有白色膜质的宽边。孢子囊穗长圆形，钝头，有短柄。'
+              },
+              {
+                name: '绶草',
+                picture: './assets/res/2_10.jpg',
+                description: '绶草（学名：Spiranthes sinensis (Pers.) Ames）：植株高13-30厘米。根数条，指状，肉质，簇生于茎基部。茎较短，近基部生2-5枚叶。叶片宽线形或宽线状披针形，极罕为狭长圆形，直立伸展。花茎直立，长10-25厘米，花小，紫红色、粉红色或白色，在花序轴上呈螺旋状排生。'
+              },
+              {
+                name: '乌头',
+                picture: './assets/res/2_11.jpg',
+                description: '乌头（学名：Aconitum carmichaeli Debx.）为毛茛科植物，母根叫乌头，为镇痉剂，冶风庳，风湿神经痛。侧根（子根）入药，叫附子。有回阳、逐冷、祛风湿的作用。治大汗亡阳、四肢厥逆、霍乱转筋、肾阳衰弱的腰膝冷痛、形寒爱冷、精神不振以及风寒湿痛、脚气等症。'
+              },
+              {
+                name: '荇菜',
+                picture: './assets/res/2_12.jpg',
+                description: '荇菜(学名：Nymphoidespeltatum(Gmel.)O.Kuntze 多年生水生植物，枝条有二型，长枝匍匐于水底，如横走茎；短枝从长枝的节处长出。 叶卵形，花大而明显，是莕菜属中花形最大的种类，直径约2.5公分长，花冠黄色，种子子多数，圆形，扁平。'
+              },
+              {
+                name: '芨芨草',
+                picture: './assets/res/2_13.jpg',
+                description: '芨芨草（拉丁文名：Achnatherum splendens (Trin. ) ）Nevski 禾本科、芨芨草属植株具粗而坚韧外被砂套的须根。秆直立，坚硬，内具白色的髓，形成大的密丛，叶鞘无毛，叶舌三角形或尖披针形，叶片纵卷，开花时呈金字塔形开展。'
+              },
+              {
+                name: '山韮',
+                picture: './assets/res/2_14.jpg',
+                description: '韮古同"韭" 山韮即野韭菜山韮（A. tuberosum Rottl. ex Spreng.）属百合科多年生草本植物，具特殊强烈气味，根茎横卧，鳞茎狭圆锥形，簇生；鳞式外皮黄褐色，网状纤维质；叶基生，条形，扁平；伞形花序，顶生。叶、花葶和花均作蔬菜食用；种子等可入药。'
+              }
+            ]
+
+          ];
+
+          global.getparas = function(name) {
+            var reg = new RegExp("(^|&)" + unescape(name) + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if(r!=null) return unescape(r[2]);
+            return null
+          };
+
+          global.type = global.getparas('type');
+
+          global.element = function(selector) {
+            return document.querySelector(selector)
+          };
+
+          global.setTitle = function(type) {
+            var elm = global.element('.type');
+            elm.className = 'type type_' + type;
+            document.title = ['鸟类', '鱼类', '植物'][type]
+          };
+
+          global.renderTemplate = function(data) {
+            var temp = global.element('#template').innerHTML;
+            var compiled = Template7.compile(temp);
+            var html = compiled(data);
+            var wrap = global.element('.swiper-wrapper');
+            wrap.innerHTML = html;
+          }
+
+          global.createSwiper = function(config) {
+
+            global.renderTemplate(global.data[global.type]);
+
+            var ops = config || {};
+            global.swiper = new Swiper('.swiper-container', config)
+          }
+
+          global.init = function() {
+            global.setTitle(global.type);
+            global.createSwiper({
+              effect: 'slide',
+              preloadImages: false
+            })
+          };
+        }(global))
+        ;
+    </script>
+  </head>
+  <body>
+    <div class="view">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
+      </div>
+      <div class="type"></div>
+    </div>
+    <script id="template" type="text/template7">
+    {{#each this}}
+      <div class="swiper-slide">
+      <div class="name">{{name}}</div>
+      <div class="frame">
+      <img src="{{picture}}">
+      </div>
+      <div class="introduce">{{description}}</div>
+      </div>
+    {{/each}}
+    </script>
+    <script type="text/javascript" src="./assets/swiper-4.3.3.min.js"></script>
+    <script type="text/javascript">
+      global.init()
+    </script>
+  </body>
+</html>

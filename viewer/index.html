@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>看图识物</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .view {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+            height: 100vh;
+            background: url('./assets/intro_bg.jpg') no-repeat center;
+            background-size: 100% 100%;
+        }
+        .view .logo {
+            position: absolute;
+            width: 1.8rem;
+            height: 1.8rem;
+            top: .8rem;
+            left: .4rem;
+            z-index: 30;
+        }
+        .view .l_2 {
+            left: 2.5rem;
+        }
+        .view .item {
+          display: block;
+          position: absolute;
+          width: 7rem;
+          height: 1.5rem;
+        }
+        .view .i_1 {
+          right: 1rem;
+          top: 5rem;
+          transform: rotate(5deg);
+        }
+        .view .i_2 {
+          left: 1rem;
+          top: 8rem;
+          transform: rotate(-5deg);
+        }
+        .view .i_3 {
+          right: 1rem;
+          top: 11rem;
+          transform: rotate(10deg);
+        }
+    </style>
+    <script type="text/javascript">
+        ;(function (global) {
+            var width = Math.min(global.screen.availWidth, 500);
+            var html = document.querySelector('html');
+            html.style.fontSize = (width / 10) + 'px';
+        }(window))
+    </script>
+  </head>
+  <body>
+    <div class="view">
+        <div class="logo l_1">
+            <img src="./assets/logo_1.png">
+        </div>
+        <div class="logo l_2">
+            <img src="./assets/logo_2.png">
+        </div>
+        <a href="cates.html?type=0" class="item i_1"></a>
+        <a href="cates.html?type=1" class="item i_2"></a>
+        <a href="cates.html?type=2" class="item i_3"></a>
+    </div>
+  </body>
+</html>
