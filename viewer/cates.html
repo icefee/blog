@@ -33,7 +33,7 @@
           bottom: 12%;
           right: .9rem;
           background-repeat: no-repeat;
-          background-position: center;
+          background-position: center 0;
           background-size: 100% auto;
         }
         .view .type_0 {
@@ -44,6 +44,9 @@
         }
         .view .type_2 {
           background-image: url('./assets/type_2.png');
+        }
+        .view .back {
+          padding: .65rem .6rem 0;
         }
         .name {
           padding: .3rem 0 .2rem;
@@ -65,6 +68,19 @@
           font-size: .35rem;
           padding: 0 .4rem .6rem;
           text-indent: .8rem;
+        }
+        .inline-font {
+          position: relative;
+          width: auto;
+          display: inline;
+        }
+        .name .inline-font {
+          height: .7rem;
+          top: .1rem;
+        }
+        .introduce .inline-font {
+          height: .35rem;
+          top: .05rem;
         }
     </style>
     <link rel="stylesheet" href="./assets/swiper-4.3.3.min.css">
@@ -140,9 +156,9 @@
                 description: '白骨顶鸡(学名:Fulica atra)属鹤形目秧鸡科的鸟类。嘴长度适中，高而侧扁。头具额甲，白色，端部钝圆。翅短圆，第1枚初级飞羽较第2枚为短。跗跖短，短于中趾不连爪，趾均具宽而分离的瓣蹼。体羽全黑或暗灰黑色，多数尾下覆羽有白色，两性相似。'
               },
               {
-                name: '黑颈长脚鹬',
+                name: '黑翅长脚鹬',
                 picture: './assets/res/0_12.jpg',
-                description: '黑颈长脚鹬（学名：Himantopus mexicanus）是一种修长的黑白色涉禽。体长约37厘米。特征为细长的嘴黑色，两翼黑，长长的腿红色，体羽白。颈背具黑色斑块。幼鸟褐色较浓，头顶及颈背沾灰。'
+                description: '黑翅长脚鹬（学名：Himantopus himantopus），是反嘴鹬科长脚鹬属的一种鸟类，共有4个亚种。是一种修长的黑白色涉禽。体长约37厘米。特征为细长的嘴黑色，两翼黑，长长的腿红色，体羽白。颈背具黑色斑块。幼鸟褐色较浓，头顶及颈背沾灰。'
               },
               {
                 name: '黑鹳',
@@ -190,9 +206,9 @@
                 description: '喜鹊（学名：Pica pica）是鸟纲鸦科的一种鸟类。体长40~50厘米，雌雄羽色相似，头、颈、背至尾均为黑色，并自前往后分别呈现紫色、绿蓝色、绿色等光泽，双翅黑色而在翼肩有一大形白斑，尾远较翅长，呈楔形，嘴、腿、脚纯黑色，腹面以胸为界，前黑后白。'
               },
               {
-                name: '小',
+                name: '小<img class="inline-font" src="./assets/font.png">',
                 picture: './assets/res/0_22.jpg',
-                description: '小（Trachybaptus ruficollis；little gre-be） 目科小属的1种。全长25—32厘米。又名水葫芦，因体形短圆，在水上浮沉宛如葫芦而得名。上体黑褐而有光泽；眼先、颊、颏和上喉等均黑褐色；下喉、耳区和颈棕栗色；上胸黑褐色；下胸和腹部银白色；尾短。'
+                description: '小<img class="inline-font" src="./assets/font.png">（Trachybaptus ruficollis；little gre-be） <img class="inline-font" src="./assets/font.png">目<img class="inline-font" src="./assets/font.png">科小<img class="inline-font" src="./assets/font.png">属的1种。全长25—32厘米。又名水葫芦，因体形短圆，在水上浮沉宛如葫芦而得名。上体黑褐而有光泽；眼先、颊、颏和上喉等均黑褐色；下喉、耳区和颈棕栗色；上胸黑褐色；下胸和腹部银白色；尾短。'
               },
               {
                 name: '鸳鸯雌鸟',
@@ -206,6 +222,11 @@
               }
             ],
             [
+              {
+                name: '细鳞鲑',
+                picture: './assets/res/1_6.jpg',
+                description: '细鳞鲑，Brachymystax lenok (Pallas, 1773) ，因鳞细小而得名。属鲑形目，鲑科，细鳞鱼属。俗称：山细鳞鱼、江细鳞鱼（东北），闾鱼、闾花鱼、金板鱼、花鱼（陕西），梅花鱼（甘肃），小红鱼（新疆）。英文名：Lenok。在黑龙江流域是一种重要的经济鱼类。'
+              },
               {
                 name: '鲫鱼',
                 picture: './assets/res/1_0.jpg',
@@ -224,7 +245,7 @@
               {
                 name: '北方花鳅',
                 picture: './assets/res/1_3.jpg',
-                description: '北方花鳅是一种主要特征与黑龙江花鳅相似的小型鱼类。'
+                description: '北方花鳅是一种主要特征与黑龙江花鳅相似的小型鱼类。生活于砂砾底质的沟渠缓流或水质较肥多水草的静水环境，以藻类和高等植物碎屑为食。体表斑点显著，是较好的观赏鱼类。此鱼喜活动于江河缓流，在湖泊、水库、沼泽水域等也有分布。食物以底栖动物及枝角类为主，肠道中也发现有藻类。'
               },
               {
                 name: '泥鳅',
@@ -235,11 +256,6 @@
                 name: '鲇鱼',
                 picture: './assets/res/1_5.jpg',
                 description: '鲇鱼即鲶鱼(学名：Silurus asotus)，属于脊椎动物亚门、硬骨鱼纲、辐鳍亚纲、鲇形目的一种鱼类，又称作胡子鲢、黏鱼、塘虱鱼，生仔鱼。'
-              },
-              {
-                name: '细鳞鱼',
-                picture: './assets/res/1_6.jpg',
-                description: '为冰期自北方南移的残留种。属冷水性山麓鱼类。'
               }
             ],
             [
@@ -373,7 +389,11 @@
       <div class="swiper-container">
         <div class="swiper-wrapper"></div>
       </div>
-      <div class="type"></div>
+      <div class="type" onclick="history.go(-1)">
+        <div class="back">
+          <img src="./assets/back.png">
+        </div>
+      </div>
     </div>
     <script id="template" type="text/template7">
     {{#each this}}
