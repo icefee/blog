@@ -62,24 +62,24 @@
     <div class="view">
     	<iframe src="./index.html" scrolling="no"></iframe>
     	<audio id="sound" src="./assets/music.mp3" preload loop autoplay></audio>
-    	<div id="switch"></div>
+    	<div id="switch">
+    		<img src="../assets/music.svg">
+    	</div>
     </div>
     <script type="text/javascript">
+    	var sound = document.querySelector('#sound');
+    	sound.play();
+    	var isPlaying = true;
+
     	document.addEventListener('WeixinJSBridgeReady', function () {
-
-    		var sound = document.querySelector('#sound');
     		sound.play();
+    	}, false);
 
-    		var isPlaying = true;
-
-
-    		var $switch = document.querySelector('#switch');
-    		$switch.addEventListener('click', function () {
-    			isPlaying ? sound.pause() : sound.play();
-    			$switch.style.animationPlayState = isPlaying ? 'paused' : 'running';
-    			isPlaying = !isPlaying;
-    		}, false)
-
+    	var $switch = document.querySelector('#switch');
+    	$switch.addEventListener('click', function () {
+    		isPlaying ? sound.pause() : sound.play();
+    		$switch.style.animationPlayState = isPlaying ? 'paused' : 'running';
+    		isPlaying = !isPlaying;
     	}, false)
     </script>
   </body>
