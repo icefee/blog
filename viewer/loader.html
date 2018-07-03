@@ -76,6 +76,7 @@
 
     	var $switch = document.querySelector('#switch');
     	$switch.addEventListener('click', function () {
+    		alert(isPlaying);
     		isPlaying ? sound.pause() : sound.play();
     		$switch.style.animationPlayState = isPlaying ? 'paused' : 'running';
     		isPlaying = !isPlaying;
