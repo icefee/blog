@@ -34,6 +34,8 @@
         	z-index: 2525252;
 
         	animation: rotate 2s infinite linear;
+
+        	animation-play-state: running;
         }
 
         @-webkit-keyframes rotate {
@@ -56,6 +58,10 @@
         		transform: rotate(360deg);
         	}
         }
+
+        #switch.paused {
+        	animation-play-state: paused;
+        }
     </style>
   </head>
   <body>
@@ -76,9 +82,8 @@
 
     	var $switch = document.querySelector('#switch');
     	$switch.addEventListener('click', function () {
-    		alert(isPlaying);
     		isPlaying ? sound.pause() : sound.play();
-    		$switch.style.animationPlayState = isPlaying ? 'paused' : 'running';
+    		$switch.className = isPlaying ? 'paused' : '';
     		isPlaying = !isPlaying;
     	}, false)
     </script>
