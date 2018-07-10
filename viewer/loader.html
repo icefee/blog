@@ -33,9 +33,9 @@
         	top: 5vw;
         	z-index: 2525252;
 
-        	animation: rotate 2s infinite linear;
+        	
 
-        	animation-play-state: running;
+        	/* animation-play-state: running; */
         }
 
         @-webkit-keyframes rotate {
@@ -59,9 +59,14 @@
         	}
         }
 
-        #switch.paused {
-        	animation: none;
+        #switch.rotate {
+            /*
+        	-webkit-animation-play-state: paused;
         	animation-play-state: paused;
+
+            */
+
+            animation: rotate 2s infinite linear;
         }
     </style>
   </head>
@@ -69,22 +74,33 @@
     <div class="view">
     	<iframe src="./index.html" scrolling="no"></iframe>
     	<audio id="sound" src="./assets/music.mp3" preload loop autoplay></audio>
-    	<div id="switch"></div>
+    	<div id="switch" class="rotate"></div>
     </div>
     <script type="text/javascript">
     	var sound = document.querySelector('#sound');
     	sound.play();
     	var isPlaying = true;
+        var mixture = null;
 
     	document.addEventListener('WeixinJSBridgeReady', function () {
     		sound.play();
     		isPlaying = true;
     	}, false);
 
-    	var $switch = document.querySelector('#switch');
+        var $switch = document.querySelector('#switch');
+
+        function pause() {
+            mixture = getComputedStyle($switch).transform;
+            $switch.style.transform = mixture;
+        }
+
     	$switch.addEventListener('click', function () {
-    		isPlaying ? sound.pause() : sound.play();
-    		$switch.className = isPlaying ? 'paused' : '';
+            if(isPlaying) {
+                sound.pause()
+                pause()
+            }
+            else sound.play()
+    		$switch.className = isPlaying ? '' : 'rotate';
     		isPlaying = !isPlaying;
     	}, false)
     </script>

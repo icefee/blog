@@ -20,6 +20,7 @@
         .view {
             position: relative;
             width: 100vw;
+            /* max-width: 500px; */
             height: 100vh;
             background: url('./assets/cates_bg.jpg') no-repeat center;
             background-size: 100% 100%;
@@ -42,6 +43,12 @@
         }
         .view .type_2 {
           background-image: url('./assets/type_2.png');
+        }
+        .view .type_3 {
+          background-image: url('./assets/type_3.png');
+        }
+        .view .type_4 {
+          background-image: url('./assets/type_4.png');
         }
         .view .back {
           padding: .65rem .6rem 0;
@@ -93,16 +100,6 @@
         ;(function (global) {
           global.data = [
             [
-              {
-                name: '蜻蜓',
-                picture: './assets/res/0_0.jpg',
-                description: '蜻蜓，（学名：Dragonfly）无脊椎动物，昆虫纲，蜻蜓目，差翅亚目昆虫的通称。一般体型较惖大，翅长而窄，膜质，网状翅脉极为清晰。视觉极为灵敏，单眼3个；触角1对，细而较短；咀嚼式口器。蜻蜓是世界上眼睛最多的昆虫。'
-              },
-              {
-                name: '艾鼬',
-                picture: './assets/res/0_1.jpg',
-                description: '艾鼬（学名：  Mustela eversmanni）又称作艾虎、地狗，是鼬科鼬属的小型毛皮动物，体形象黄鼬，身长30-45cm，尾长11-20cm。吻部钝，颈稍粗，足短。前肢间毛短，背中部毛最长，略为拱曲形。尾毛稍蓬松。体侧淡棕色。'
-              },
               {
                 name: '白腹鹞',
                 picture: './assets/res/0_2.jpg',
@@ -332,6 +329,20 @@
                 picture: './assets/res/2_14.jpg',
                 description: '韮古同"韭" 山韮即野韭菜山韮（A. tuberosum Rottl. ex Spreng.）属百合科多年生草本植物，具特殊强烈气味，根茎横卧，鳞茎狭圆锥形，簇生；鳞式外皮黄褐色，网状纤维质；叶基生，条形，扁平；伞形花序，顶生。叶、花葶和花均作蔬菜食用；种子等可入药。'
               }
+            ],
+            [
+            {
+               name: '蜻蜓',
+               picture: './assets/res/0_0.jpg',
+               description: '蜻蜓，（学名：Dragonfly）无脊椎动物，昆虫纲，蜻蜓目，差翅亚目昆虫的通称。一般体型较惖大，翅长而窄，膜质，网状翅脉极为清晰。视觉极为灵敏，单眼3个；触角1对，细而较短；咀嚼式口器。蜻蜓是世界上眼睛最多的昆虫。'
+            }
+            ],
+            [
+            {
+               name: '艾鼬',
+               picture: './assets/res/0_1.jpg',
+               description: '艾鼬（学名：  Mustela eversmanni）又称作艾虎、地狗，是鼬科鼬属的小型毛皮动物，体形象黄鼬，身长30-45cm，尾长11-20cm。吻部钝，颈稍粗，足短。前肢间毛短，背中部毛最长，略为拱曲形。尾毛稍蓬松。体侧淡棕色。'
+            }
             ]
 
           ];
@@ -352,7 +363,7 @@
           global.setTitle = function(type) {
             var elm = global.element('.type');
             elm.className = 'type type_' + type;
-            document.title = ['鸟类', '鱼类', '植物'][type]
+            document.title = ['鸟类', '鱼类', '植物', '昆虫', '动物'][type]
           };
 
           global.renderTemplate = function(data) {
