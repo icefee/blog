@@ -237,9 +237,7 @@ ul, li {
 
 .menus {
 	background-color: #cc1c1e;
-	border-color: #ffcc00;
-	border-width: 0 2px 2px 2px;
-	border-style: solid;
+	border: 2px solid #ffcc00;
 }
 
 .menus ul li {
