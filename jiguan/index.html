@@ -138,15 +138,15 @@
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<img src="./img/flash_img_1.jpg">
-								<p class="flash-title">习近平眼中优秀年轻干部什么样</p>
+								<p class="flash-title">习近平对假疫苗事件...</p>
 							</div>
 							<div class="swiper-slide">
-								<img src="./img/flash_img_1.jpg">
-								<p class="flash-title">习近平眼中优秀年轻干部什么样</p>
+								<img src="./img/flash_img_2.jpg">
+								<p class="flash-title">牢记历史使命 投身农村基层 在打赢脱贫攻坚战中...</p>
 							</div>
 							<div class="swiper-slide">
-								<img src="./img/flash_img_1.jpg">
-								<p class="flash-title">习近平眼中优秀年轻干部什么样</p>
+								<img src="./img/flash_img_3.jpg">
+								<p class="flash-title">晋中市纪委监委机关纪念建党97周年专题党课</p>
 							</div>
 						</div>
 						<div class="swiper-pagination"></div>
@@ -238,9 +238,7 @@
 					<img src="./img/class_4.jpg">
 				</div>
 			</div>
-		</div>
-	<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div></div>
+		</div></div>
 		<div class="channels horizontal clear">
 					<div class="channel-item">
 						<div class="channel-title clear">
@@ -415,27 +413,33 @@
 					paginationClickable: true,
 					paginationBulletRender: function (swiper, index, className) {
 						return '<span class="' + className + '">' + (index + 1) + '</span>';
-					}
+					},
+					effect: 'fade'
 				});
 
 				//
 				global.objects = new Swiper('.objects .swiper-container',{
+					autoplay: 1200,
 					slidesPerView: 4,
-					prevButton:'.swiper-button-prev',
-					nextButton:'.swiper-button-next',
-					spaceBetween: 15
+					spaceBetween: 15,
+					loop: true
 				});
 
+				$('.objects').hover(global.objects.stopAutoplay, global.objects.startAutoplay)
+
 
 				;
 				;
+
 				//
 				global.books = new Swiper('.books-list .swiper-container',{
 					autoplay: 1000,
 					slidesPerView: 5,
 					spaceBetween: 15,
 					loop: true
-				});;
+				});
+
+				$('.books-list').hover(global.books.stopAutoplay, global.books.startAutoplay)
 
 
 				global.frames = $('.frame');

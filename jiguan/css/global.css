@@ -419,7 +419,7 @@ ul, li {
 
 .objects {
 	position: relative;
-	padding: 0 30px;
+	padding: 0 15px;
 }
 
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next, .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
