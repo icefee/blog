@@ -76,7 +76,7 @@ ul, li {
 
 .frame .label {
 	position: absolute;
-	transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+	transition: all .3s ease-in-out;
 	opacity: 0;
 	transform: scale(1.4);
 }
@@ -456,7 +456,7 @@ ul, li {
 
 .extra .books .books-list {
 	float: right;
-	width: 600px;
+	width: 620px;
 }
 
 .extra .right {
@@ -491,6 +491,13 @@ ul, li {
 
 @media (min-width: 1200px) {
 	.layout {
-		padding: 20px 120px;
+		width: 1200px;
+		padding: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.layout .logo {
+		padding: 0;
 	}
 }
