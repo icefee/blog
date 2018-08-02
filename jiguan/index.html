@@ -373,8 +373,6 @@
 					<img src="./img/book_8.jpg">
 				</div>
 			</div>
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
 		</div>
 					</div>
 				</div>
@@ -433,10 +431,10 @@
 				;
 				//
 				global.books = new Swiper('.books-list .swiper-container',{
+					autoplay: 1000,
 					slidesPerView: 5,
 					spaceBetween: 15,
-					prevButton:'.swiper-button-prev',
-					nextButton:'.swiper-button-next'
+					loop: true
 				});;
 
 
